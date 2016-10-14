@@ -7,8 +7,8 @@ import org.hibernate.cfg.Configuration;
 public class HibernateTest {
 	public static void main(String[] args) {
 		UserDetails user = new UserDetails();
-		user.setUserId(2);
-		user.setUserName("chky");
+		user.setUserId(7);
+		user.setUserName("7th user");
 		System.out.println("before session");
 		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 		System.out.println("after session");
@@ -16,5 +16,6 @@ public class HibernateTest {
 		session.beginTransaction();
 		session.save(user);
 		session.getTransaction().commit();
+		sessionFactory.close();
 	}
 }

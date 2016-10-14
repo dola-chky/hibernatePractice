@@ -3,7 +3,7 @@ package com.dola.hibernateprac;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity
+@Entity(name="USER_DETAILS")
 public class UserDetails {
 	@Id
 	private int userId;

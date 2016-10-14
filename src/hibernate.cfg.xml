@@ -10,14 +10,23 @@
 
 <hibernate-configuration>
     <session-factory>
+    	<!-- SQL dialect -->
         <property name="hibernate.dialect">org.hibernate.dialect.H2Dialect</property>
+        <!-- driver class name -->
         <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+        <!-- user name -->
         <property name="hibernate.connection.username">system</property>
+        <!-- password -->
         <property name="hibernate.connection.password">root</property>
+        <!-- database connection url -->
         <property name="hibernate.connection.url">jdbc:oracle:thin:@127.0.0.1:1521:XE</property>
-        <property name="hibernate.hbm2ddl.auto">create</property>
-        <property name="hibernate.generate_statistics">true</property>
-       
+        <!-- drop and recreate database schema on startup -->
+        <property name="hibernate.hbm2ddl.auto">create-drop</property>
+        <!-- prints executing sql -->
+        <property name="show_sql">true</property>
+        <!-- disable second level cache -->
+        <property name="cache.provider_class">org.hibeernate.cache.NoCacheProvider</property>
+        <!-- model class name mapping -->
         <mapping class="com.dola.hibernateprac.UserDetails"/>
     
     </session-factory>
